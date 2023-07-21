@@ -5,6 +5,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,10 +38,11 @@ public class DataHelper extends SQLiteOpenHelper {
                 ");" +
                 "");
         db.execSQL("create table sewa(" +
-                "merk text," +
-                "nama text," +
-                "promo int," +
-                "lama int," +
+                "merk text,"    +
+                "nama text,"    +
+                "supir int,"   +
+                "promo int,"    +
+                "lama int,"     +
                 "total double," +
                 "foreign key(merk) references mobil (merk), " +
                 "foreign key(nama) references penyewa (nama) " +

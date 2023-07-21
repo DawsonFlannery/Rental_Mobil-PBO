@@ -157,10 +157,51 @@
                         android:layout_below="@+id/txtMerk" />
 
                     <TextView
-                        android:id="@+id/txtPromo"
+                        android:id="@+id/txtSupir"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/spinner"
+                        android:layout_marginTop="20dp"
+                        android:text="Pakai Supir ?"
+                        android:textColor="@android:color/black"
+                        android:textSize="17sp" />
+
+                    <RadioGroup
+                        android:id="@+id/supirGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtSupir"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rbSupirYa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:checked="true"
+                            android:text="Ya"
+                            android:textColor="@color/colorPrimary" />
+
+                        <RadioButton
+                            android:id="@+id/rbSupirTidak"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="Tidak"
+                            android:textColor="@color/colorPrimary" />
+
+                    </RadioGroup>
+
+
+                    <TextView
+                        android:id="@+id/txtPromo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/supirGroup"
                         android:layout_marginTop="20dp"
                         android:text="Promo"
                         android:textColor="@android:color/black"
@@ -195,6 +236,7 @@
                             android:textColor="@color/colorPrimary" />
 
                     </RadioGroup>
+
 
                     <TextView
                         android:id="@+id/txtLmSewa"

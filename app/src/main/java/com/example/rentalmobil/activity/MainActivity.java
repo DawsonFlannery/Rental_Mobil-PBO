@@ -77,13 +77,13 @@ public class MainActivity extends AppCompatActivity {
         Calendar calendar = Calendar.getInstance();
         int timeOfDay = calendar.get(Calendar.HOUR_OF_DAY);
         if (timeOfDay >= 0 && timeOfDay < 12) {
-            tvMainSalam.setText("Selamat Pagi" + " " + "Dawson");
+            tvMainSalam.setText("Selamat Pagi");
         } else if (timeOfDay >= 12 && timeOfDay < 15) {
-            tvMainSalam.setText("Selamat Siang" + " " + "Dawson");
+            tvMainSalam.setText("Selamat Siang");
         } else if (timeOfDay >= 15 && timeOfDay < 18) {
-            tvMainSalam.setText("Selamat Sore" + " " + "Dawson");
+            tvMainSalam.setText("Selamat Sore");
         } else if (timeOfDay >= 18 && timeOfDay < 24) {
-            tvMainSalam.setText("Selamat Malam" + " " + "Dawson");
+            tvMainSalam.setText("Selamat Malam");
         }
     }
 

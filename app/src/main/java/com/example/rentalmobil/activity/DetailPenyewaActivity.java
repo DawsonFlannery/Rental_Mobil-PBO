@@ -17,7 +17,7 @@ import com.example.rentalmobil.helper.DataHelper;
 public class DetailPenyewaActivity extends AppCompatActivity {
 
     String sNama, sAlamat, sHP, sMerk, sHarga;
-    int iLama, iPromo, iTotal;
+    int iLama, iPromo, iTotal, tSupir;
     double dTotal;
 
     protected Cursor cursor;
@@ -41,9 +41,10 @@ public class DetailPenyewaActivity extends AppCompatActivity {
             sHP = cursor.getString(2);
             sMerk = cursor.getString(3);
             sHarga = cursor.getString(4);
-            iPromo = cursor.getInt(7);
-            iLama = cursor.getInt(8);
-            dTotal = cursor.getDouble(9);
+            tSupir = cursor.getInt(7);
+            iPromo = cursor.getInt(8);
+            iLama = cursor.getInt(9);
+            dTotal = cursor.getDouble(10);
         }
 
         TextView tvNama = findViewById(R.id.HNama);
@@ -54,6 +55,7 @@ public class DetailPenyewaActivity extends AppCompatActivity {
         TextView tvHarga = findViewById(R.id.HHarga);
 
         TextView tvLama = findViewById(R.id.HLamaSewa);
+        TextView tvSupir = findViewById(R.id.HSupir);
         TextView tvPromo = findViewById(R.id.HPromo);
         TextView tvTotal = findViewById(R.id.HTotal);
 
@@ -64,8 +66,10 @@ public class DetailPenyewaActivity extends AppCompatActivity {
         tvMerk.setText("     " + sMerk);
         tvHarga.setText("     Rp. " + sHarga);
 
-        tvLama.setText("     " + iLama + " hari");
+        tvSupir.setText("     Rp. " + tSupir);
         tvPromo.setText("     " + iPromo + "%");
+        tvLama.setText("     " + iLama + " hari");
+
         iTotal = (int) dTotal;
         tvTotal.setText("     Rp. " + iTotal);
 

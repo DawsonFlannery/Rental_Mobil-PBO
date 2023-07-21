@@ -176,10 +176,29 @@
                         android:textSize="17sp" />
 
                     <TextView
-                        android:id="@+id/txtPromo"
+                        android:id="@+id/txtSupir"
                         android:layout_width="match_parent"
                         android:layout_height="30dp"
                         android:layout_below="@+id/HHarga"
+                        android:layout_marginTop="10dp"
+                        android:text="Supir :"
+                        android:textColor="@android:color/black"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/HSupir"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_below="@+id/txtSupir"
+                        android:text="Rp. 300000"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/txtPromo"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_below="@+id/HSupir"
                         android:layout_marginTop="10dp"
                         android:text="Promo :"
                         android:textColor="@android:color/black"
@@ -190,7 +209,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="30dp"
                         android:layout_below="@+id/txtPromo"
-                        android:text="Rp. 500000"
+                        android:text="10%"
                         android:textColor="@color/colorPrimary"
                         android:textSize="17sp" />
 

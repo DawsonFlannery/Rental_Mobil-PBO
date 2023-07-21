@@ -24,13 +24,13 @@ import java.util.List;
 public class SewaMobilActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     EditText nama, alamat, no_hp, lama;
-    RadioGroup promo;
-    RadioButton weekday, weekend;
+    RadioGroup promo, supir;
+    RadioButton weekday, weekend, ya, tidak;
     Button selesai;
 
     String sNama, sAlamat, sNo, sMerk, sLama;
     double dPromo;
-    int iLama, iPromo, iHarga;
+    int iLama, iPromo, iHarga, iSupir, tSupir;
     double dTotal;
 
     private Spinner spinner;
@@ -51,6 +51,9 @@ public class SewaMobilActivity extends AppCompatActivity implements AdapterView.
         promo = findViewById(R.id.promoGroup);
         weekday = findViewById(R.id.rbWeekDay);
         weekend = findViewById(R.id.rbWeekEnd);
+        supir = findViewById(R.id.supirGroup);
+        ya = findViewById(R.id.rbSupirYa);
+        tidak = findViewById(R.id.rbSupirTidak);
         lama = findViewById(R.id.eTLamaSewa);
 
         spinner.setOnItemSelectedListener(this);
@@ -75,6 +78,12 @@ public class SewaMobilActivity extends AppCompatActivity implements AdapterView.
                     dPromo = 0.25;
                 }
 
+                if (ya.isChecked()) {
+                    iSupir = 100000;
+                } else if (tidak.isChecked()) {
+                    iSupir = 0;
+                }
+
                 if (sMerk.equals("Avanza")) {
                     iHarga = 400000;
                 } else if (sMerk.equals("Xenia")) {
@@ -97,16 +106,18 @@ public class SewaMobilActivity extends AppCompatActivity implements AdapterView.
 
                 iLama = Integer.parseInt(sLama);
                 iPromo = (int) (dPromo * 100);
-                dTotal = (iHarga * iLama) - (iHarga * iLama * dPromo);
+                tSupir = iSupir * iLama;
+                dTotal = (iHarga * iLama + tSupir) - (iHarga * iLama * dPromo);
 
                 SQLiteDatabase dbH = dbHelper.getWritableDatabase();
                 dbH.execSQL("INSERT INTO penyewa (nama, alamat, no_hp) VALUES ('" +
                         sNama + "','" +
                         sAlamat + "','" +
                         sNo + "');");
-                dbH.execSQL("INSERT INTO sewa (merk, nama, promo, lama, total) VALUES ('" +
+                dbH.execSQL("INSERT INTO sewa (merk, nama, supir, promo, lama, total) VALUES ('" +
                         sMerk + "','" +
                         sNama + "','" +
+                        tSupir + "','" +
                         iPromo + "','" +
                         iLama + "','" +
                         dTotal + "');");
